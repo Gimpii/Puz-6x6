@@ -1,6 +1,3 @@
-# Binary Puzzle - Teacher site
+# Binary Puzzle - Yellow Group (Finn, Daniel, Jordan)
 
-This version is 6x6, but enterprising students may want to code for a variable size.
-A puzzle converting a 1D array to 2D. It's fun too!
-
-The index file links to the versions as evolve.
+A simple puzzle, simpilar to the way sudoku works, except with 1's and 0's, and a few other rules
