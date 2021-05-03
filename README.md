@@ -1,4 +1,2 @@
-# SDD-ASMNT
-This project and all renditions, modifications or prototypes including experimental projects, live fire tests and full version attempts are property of pebguin by ATOMICA INDUSTRIES. Any attempts to rebrand modified code or protypes is NOT ALLOWED. By using this code you agree to NOT REBRAND CODE. You are allowed to modify code however you may like and redistibute code BUT THIS README MUST BE INCLUDED.
-
-Group members: Daniel, Finn, Jordan
+# Binary Puzzle
+A simple puzzle, simpilar to the way sudoku works, except with 1's and 0's, and a few other rules
