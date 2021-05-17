@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>V12 Binary Puzzle 6x6</title>
+    <title>V13 Binary Puzzle 6x6</title>
     <style type="text/css">
 
         * {
@@ -76,7 +76,36 @@
             return false;
         }
         function SolveNumberPairs() { 
-            window.alert('SolveNumberPairs has not been coded yet');
+            var GridSize = 6
+            for (let Row = 0; Row < GridSize - 1; Row++) {
+                for (let Col = 0; Col < GridSize - 1; Col++) {
+                    if (Grid[Row][Col] !== null && Grid[Row][Col] == Grid[Row][Col + 1]) {
+                        if (Col > 0) {
+                            Grid[Row][Col - 1] = (1 - Grid[Row][Col]);
+                        }
+                        if (Col < GridSize - 2) {
+                            Grid[Row][Col + 2] = (1 - Grid[Row][Col]);
+                        }
+                    }
+                }
+            }
+            var GridSize = 6
+            for (let Row = 0; Row < GridSize - 1; Row++) {
+
+                for (let Col = 0; Col < GridSize - 1; Col++) {
+
+                    if (Grid[Row][Col] !== null && Grid[Row][Col] == Grid[Row + 1][Col]) {
+                        if (Row > 0) {
+                            Grid[Row - 1][Col] = (1 - Grid[Row][Col]);
+                        }
+                        if (Row < GridSize - 2) {
+                            Grid[Row + 2][Col] = (1 - Grid[Row][Col]);
+                        }
+                    }
+                }
+            }
+            document.getElementById('arrayView2D').value = Grid;
+            DisplayGrid(Grid);
         }
         function SolveRowPairs() { 
             var GridSize = 6
@@ -97,7 +126,25 @@
             // Finn 14/5/21: SolveRowPairs was carefully rewritten after facing issues of the grid solving mechanics not working as intended.
         }
         function SolveColPairs() {
-            window.alert('SolveColPairs has not been coded yet');
+            var GridSize = 6
+
+            for (let Row = 0; Row < GridSize - 1; Row++) {
+
+                for (let Col = 0; Col < GridSize - 1; Col++) {
+
+                    if (Grid[Row][Col] !== null && Grid[Row][Col] == Grid[Row + 1][Col]) {
+                        if (Row > 0) {
+                            Grid[Row - 1][Col] = (1 - Grid[Row][Col]);
+                        }
+                        if (Row < GridSize - 2) {
+                            Grid[Row + 2][Col] = (1 - Grid[Row][Col]);
+                        }
+                    }
+                }
+            }
+            document.getElementById('arrayView2D').value = Grid;
+            DisplayGrid(Grid);
+            // Finn 15/05/21: Coded SolveColPairs
         }
         function SolveNumberTrios() {
             window.alert('SolveNumberTrios has not been coded yet');
@@ -118,8 +165,7 @@
     
     <form id="input">
         <h1>6x6 Binary Puzzle Game</h1>
-        <h2>V12: Fixed Issues revolving around the Loadgrid function</h2>
-        <h3>&nbsp;</h3>
+        <h2>V13: Coded SolveNumberPairs and SolveColPairs</h2>
         <p>Return to <a href="index.html">home</a>:</p>
         LOAD a grid:
         <select id="cboPuzNo" onchange="LoadGrid(eval(value))">
